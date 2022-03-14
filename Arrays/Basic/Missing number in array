@@ -1,8 +1,9 @@
-Problem Statement: Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
+Problem Statement:
+Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
 
 
 Solution: 
-    int MissingNumber(int array[], int n)
+int MissingNumber(int array[], int n)
     {
         int result=0;
         int[] count=new int[n+1];
