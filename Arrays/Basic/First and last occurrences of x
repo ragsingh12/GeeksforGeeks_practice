@@ -1,0 +1,35 @@
+Problem Statement:
+Given a sorted array arr containing n elements with possibly duplicate elements, the task is to find indexes of first and last occurrences of an element x in the given array.
+
+
+
+Solution:
+ArrayList<Long> find(long arr[], int n, int x)
+    {
+        int flag=0;
+        ArrayList<Long> array=new ArrayList<>();
+        for(int i=0;i<n;++i)
+        {
+            if(arr[i]==x)
+            {
+                flag=1;
+                array.add((long)i);
+                break;
+            }
+        }
+        if(flag==0)
+            array.add((long)-1);
+        flag=0;
+        for(int j=n-1;j>=0;--j)
+        {
+            if(arr[j]==x)
+            {
+                flag=1;
+                array.add((long)j);
+                break;
+            }
+        }
+        if(flag==0)
+            array.add((long)-1);
+        return array;
+    }
