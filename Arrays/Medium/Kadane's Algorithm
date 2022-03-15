@@ -1,0 +1,29 @@
+Problem Statement:
+Given an array Arr[] of N integers. Find the contiguous sub-array(containing at least one number) which has the maximum sum and return its sum.
+
+Solution:
+long maxSubarraySum(int arr[], int n)
+    {
+        int sum=0,max_Sum=-1000000,big=-1000000;
+        for(int i=0;i<n;++i)
+        {
+            sum+=arr[i];
+            if(sum>max_Sum)
+                max_Sum=sum;
+            if(sum<0)
+                sum=0;
+        }
+        if(max_Sum==0)
+        {
+            for(int j=0;j<n;++j)
+            {
+                if(arr[j]>big)
+                    big=arr[j];
+                return big;
+            }
+            return arr[n-1];
+        }
+        else
+            return max_Sum;
+    }
+    
