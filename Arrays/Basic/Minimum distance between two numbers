@@ -1,0 +1,31 @@
+Problem Statement:
+You are given an array A, of N elements. Find minimum index based distance between two elements of the array, x and y.
+
+Solution:
+int minDist(int a[], int n, int x, int y)
+    {
+        int min_Diff=1000000;
+        int v1=0,v2=0,d1=-1,d2=-1;
+        for(int i=0;i<n;++i)
+        {
+            if(a[i]==x)
+            {
+                v1=a[i];
+                d1=i;
+            }
+            if(a[i]==y)
+            {
+                v2=a[i];
+                d2=i;
+            }
+            if(d1>-1 && d2>-1)
+            {
+                if(Math.abs(d1-d2)<min_Diff)
+                    min_Diff=Math.abs(d1-d2);
+            }
+        }
+        if(d1==-1 || d2==-1)
+            return -1;
+        else
+            return min_Diff;
+   }
