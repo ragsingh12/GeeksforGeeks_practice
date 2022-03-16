@@ -1,0 +1,35 @@
+Problem Statement:
+Given an array Arr (distinct elements) of size N. Rearrange the elements of array in zig-zag fashion. The converted array should be in form a < b > c < d > e < f. 
+The relative order of elements is same in the output i.e you have to iterate on the original array only.
+
+Solution:
+void zigZag(int arr[], int n)
+    {
+        for(int i=1;i<n;i+=2)
+        { 
+            if(i!=(n-1))
+            {
+                if(arr[i]<arr[i-1])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[i-1];
+                    arr[i-1]=temp;
+                }
+                if(arr[i]<arr[i+1])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[i+1];
+                    arr[i+1]=temp;
+                }
+            }
+            else
+            {
+                if(arr[i]<arr[i-1])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[i-1];
+                    arr[i-1]=temp;
+                }
+            }
+        }
+    }
