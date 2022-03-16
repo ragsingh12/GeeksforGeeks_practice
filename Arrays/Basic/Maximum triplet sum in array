@@ -1,0 +1,12 @@
+Problem Statement:
+Given an array, the task is to find the maximum triplet sum in the array.
+
+Solution:
+int maxTripletSum(int a[], int n)
+    {
+        Arrays.sort(a);
+        if(n<3)
+            return -1;
+        else
+            return (a[n-1]+a[n-2]+a[n-3]);
+    }
