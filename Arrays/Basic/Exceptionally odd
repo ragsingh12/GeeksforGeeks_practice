@@ -1,0 +1,21 @@
+Problem Statement:
+Given an array of N positive integers where all numbers occur even number of times except one number which occurs odd number of times. Find the exceptional number.
+
+Solution:
+int getOddOccurrence(int[] arr, int n)
+    {
+        int result=-1;
+        int[] count=new int[100001];
+        Arrays.fill(count,0);
+        for(int i=0;i<n;++i)
+            ++count[arr[i]];
+        for(int j=1;j<=100000;++j)
+        {
+            if(count[j]%2!=0)
+            {
+                result=j;
+                break;
+            }
+        }
+        return result;
+    }
