@@ -1,0 +1,14 @@
+Problem Statement:
+Given a sorted array A[] having 10 elements which contain 6 different numbers in which only 1 number is repeated five times.
+Your task is to find the duplicate number using two comparisons only.
+
+Solution:
+public int findDuplicate(int A[])
+    {
+        int result=0;
+        if((A[3]==A[4]) || (A[4]==A[5]))
+            result=A[4];
+        else
+            result=A[5];
+        return result;
+    }
