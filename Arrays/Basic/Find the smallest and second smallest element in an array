@@ -1,0 +1,38 @@
+Problem Statement:
+Given an array of integers, your task is to find the smallest and second smallest element in the array. If smallest and second smallest do not exist, print -1.
+
+Solution:
+public long[] minAnd2ndMin(long a[], long n)  
+    {
+        long[] arr=new long[2];
+        long first=1000000,second=1000000;
+        if(n<2)
+        {
+            arr[0]=-1;
+            arr[1]=-1;
+        }
+        else
+        {
+            for(int i=0;i<n;++i)
+            {
+                if(a[i]<first)
+                    first=a[i];
+            }
+            for(int j=0;j<n;++j)
+            {
+                if(a[j]!=first && a[j]<second)
+                    second=a[j];
+            }
+            if(first!=1000000 && second!=1000000)
+            {
+                arr[0]=first;
+                arr[1]=second;
+            }
+            else
+            {
+                arr[0]=-1;
+                arr[1]=-1;
+            }
+        }
+        return arr;
+    }
