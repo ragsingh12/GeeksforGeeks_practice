@@ -1,0 +1,25 @@
+Problem Statement:
+Given a list of integers, rearrange the list such that it consists of alternating minimum-maximum elements using only list operations.
+The first element of the list should be the minimum of all elements and the second element should be a maximum of all elements present in the list.
+Similarly, the third element will be the next minimum element and the fourth element is the next maximum element, and so on. Use of extra space is not permitted.
+Store the answer in the answer[] array. You don't need to print that.
+
+Solution:
+public static void Rearrange(int a[], int n, int answer[])
+    {
+        int k=0,last=n-1;
+        Arrays.sort(a);
+        for(int i=0;i<n;++i)
+        {
+            if(i%2==0)
+            {
+                answer[i]=a[k];
+                ++k;
+            }
+            else
+            {
+                answer[i]=a[last];
+                --last;
+            }
+        }
+    }
