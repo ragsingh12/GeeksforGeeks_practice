@@ -1,0 +1,30 @@
+Problem Statement:
+A guy has to reach his home and does not want to be late. He takes train to reach home. He has a mental illness, so he always switches train at every station.
+For eg: If he starts with train A then at station 2 he will switch his train to train B and so on. 
+Similarly, if he starts with train B then he will switch to train A at station 2 and so on. 
+Please help him to find the minimum total time he would take to reach his home.
+
+Solution:
+ public long minTime(long a[], long b[], long n)
+    {
+        long sum1=0,sum2=0;
+        int size=(int)n;
+        for(int i=0;i<size;++i)
+        {
+            if(i%2==0)
+                sum1+=a[i];
+            else
+                sum1+=b[i];
+        }
+        for(int j=0;j<size;++j)
+        {
+           if(j%2==0)
+                sum2+=b[j];
+           else
+                sum2+=a[j]; 
+        }
+        if(sum1<sum2)
+            return sum1;
+        else
+             return sum2;
+    }
