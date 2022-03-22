@@ -1,0 +1,27 @@
+Problem Statement:
+Given an array Arr[], write a program that segregates even and odd numbers. The program should put all even numbers first in sorted order, 
+and then odd numbers in sorted order.
+
+Solution:
+void segregateEvenOdd(int arr[], int n) 
+    {
+        ArrayList<Integer> e1=new ArrayList<>();
+        ArrayList<Integer> o1=new ArrayList<>();
+        for(int i=0;i<n;++i)
+        {
+            if((arr[i]&1)==0)
+                e1.add(arr[i]);
+            else
+                o1.add(arr[i]);
+        }
+        Collections.sort(e1);
+        Collections.sort(o1);
+        for(int j=0;j<e1.size();++j)
+            arr[j]=e1.get(j);
+        int mid_Length=e1.size();
+        for(int j=0;j<o1.size();++j)
+        {
+            arr[mid_Length]=o1.get(j);
+            ++mid_Length;
+        }
+    }
