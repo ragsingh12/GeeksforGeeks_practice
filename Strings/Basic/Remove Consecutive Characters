@@ -1,0 +1,14 @@
+Problem Statement:
+Given a string S delete the characters which are appearing more than once consecutively.
+
+Solution:
+public String removeConsecutiveCharacter(String S)
+    {
+        String str=Character.toString(S.charAt(0));
+        for(int i=1;i<S.length();++i)
+        {
+            if(S.charAt(i)!=S.charAt(i-1))
+                str+=Character.toString(S.charAt(i));
+        }
+        return str;
+    }
