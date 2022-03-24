@@ -1,0 +1,17 @@
+Problem Statement:
+Given a string S  and a character X, the task is to find the last index (0 based indexing) of X in string S. If no index found then the answer will be -1.
+
+Solution:
+int LastIndex(String s, char p)
+    {
+        int last_Index=-1;
+        for(int i=s.length()-1;i>=0;--i)
+        {
+            if(s.charAt(i)==p)
+            {
+                last_Index=i;
+                break;
+            }
+        }
+        return last_Index;
+    }
