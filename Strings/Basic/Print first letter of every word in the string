@@ -1,0 +1,14 @@
+Problem Statement:
+Given a string S, the task is to create a string with the first letter of every word in the string.
+
+Solution:
+String firstAlphabet(String S)
+    {
+        String str=Character.toString(S.charAt(0));
+        for(int i=1;i<S.length();++i)
+        {
+            if(S.charAt(i-1)==' ')
+                str+=Character.toString(S.charAt(i));
+        }
+        return str;
+    }
