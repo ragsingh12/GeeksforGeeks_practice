@@ -1,0 +1,13 @@
+Problem Statement:
+Given a number as string(n) , find the remainder of the number whe it is divided by 7
+
+Solution:
+int remainderWith7(String num)
+    {
+        java.math.BigInteger remainder;
+        java.math.BigInteger number= new java.math.BigInteger(num);
+        java.math.BigInteger number1= new java.math.BigInteger("7");
+        remainder=number.remainder(number1);
+        int output=remainder.intValue();
+        return output;
+    }
