@@ -1,0 +1,34 @@
+Problem Statement:
+The RPS world championship is here. Here two players A and B play the game. You need to determine who wins.
+Both players can choose moves from the set {R,P,S}.
+The game is a draw if both players choose the same item.
+The winning rules of RPS are given below:
+Rock crushes scissor
+Scissor cuts paper
+Paper envelops rock
+
+Solution:
+String gameResult(String s)
+    {
+        String result="NULL";
+        for(int i=0;i<s.length();i+=2)
+        {
+            if(s.charAt(i)=='R' && s.charAt(i+1)=='S')
+                result="A";
+            else if(s.charAt(i)=='S' && s.charAt(i+1)=='R')
+                result="B";
+            else if(s.charAt(i)=='R' && s.charAt(i+1)=='P')
+                result="B";
+            else if(s.charAt(i)=='P' && s.charAt(i+1)=='R')
+                result="A";
+            else if(s.charAt(i)=='P' && s.charAt(i+1)=='S')
+                result="B";
+            else if(s.charAt(i)=='S' && s.charAt(i+1)=='P')
+                result="A";
+            else
+                result="DRAW";
+            if(result!="NULL")
+                break;
+        }
+        return result;
+    }
