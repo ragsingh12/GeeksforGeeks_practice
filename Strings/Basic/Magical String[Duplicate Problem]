@@ -1,0 +1,15 @@
+Problem Statement:
+You are given a string S, convert it into a magical string.
+A string can be made into a magical string if the alphabets are swapped in the given manner: a->z or z->a, b->y or y->b, and so on.
+
+Solution:
+static String magicalString(String S)
+    {
+        String str="";
+        for(int i=0;i<S.length();++i)
+        {
+            int temp=219-(int)S.charAt(i);
+            str+=Character.toString((char)temp);
+        }
+        return str;
+    }
