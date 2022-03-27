@@ -1,0 +1,18 @@
+Problem Statement:
+Given an integer N represented in the form of a string, remove consecutive repeated digits from it.
+
+Solution:
+public long modify(long N)
+    {
+        String str=Long.toString(N);
+        String s="";
+        long number=0;
+        for(int i=0;i<str.length()-1;++i)
+        {
+            if( str.charAt(i)!=str.charAt(i+1) )
+                s+=Character.toString(str.charAt(i));
+        }
+        s+=Character.toString(str.charAt(str.length()-1));
+        number=Long.parseLong(s);
+        return number;
+    }
