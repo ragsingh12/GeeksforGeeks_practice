@@ -1,0 +1,19 @@
+Problem Statement:
+Pappu is confused between 6 & 9. He works in the billing department of abc company and his work is to return the remaining amount to the customers. 
+If the actual remaining amount is given we need to find the maximum possible extra amount given by the pappu to the customers.
+
+Solution:
+long findDiff(long amount) 
+    {
+        String str=Long.toString(amount);
+        String s="";
+        for(int i=0;i<str.length();++i)
+        {
+            if(str.charAt(i)=='6')
+                s+='9';
+            else
+                s+=str.charAt(i);
+        }
+        Long num=Long.parseLong(s);
+        return (num-amount);
+    }
