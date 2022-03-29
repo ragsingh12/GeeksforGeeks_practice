@@ -1,0 +1,41 @@
+Problem Statement:
+Given two strings S1 and S2 as input, the task is to merge them alternatively i.e. the first character of S1 then the first character of S2 and so on till the strings end.
+NOTE: Add the whole string if other string is empty.
+
+Solution:
+String merge(String S1, String S2)
+    { 
+        String str="";
+        int l1=S1.length(),l2=S2.length();
+        if(l1>=l2)
+        {
+            if(l2==0)
+                str+=S1;
+            else
+            {
+                for(int i=0;i<l2;++i)
+                {
+                    str+=S1.charAt(i);
+                    str+=S2.charAt(i);
+                }
+                for(int j=l2;j<l1;++j)
+                    str+=S1.charAt(j);
+            }
+        }
+        else
+        {
+            if(l1==0)
+                str+=S2;
+            else
+            {
+                for(int i=0;i<l1;++i)
+                {
+                    str+=S1.charAt(i);
+                    str+=S2.charAt(i);
+                }
+                for(int j=l1;j<l2;++j)
+                    str+=S2.charAt(j);
+            }
+        }
+        return str;
+    }
