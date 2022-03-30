@@ -1,0 +1,19 @@
+Problem Statement:
+Given a string S of digits(0-9).Find the maximum value that can be obtained from the string by putting either '*' or '+'
+operators in between the digits while traversing from left to right of the string and picking up a single digit at a time.
+
+Solution:
+long MaximumIntegerValue(String S)
+    {
+        long result=Character.getNumericValue(S.charAt(0));
+        for(int i=1;i<S.length();++i)
+        {
+            long sum=result+Character.getNumericValue(S.charAt(i));
+            long mul=result*Character.getNumericValue(S.charAt(i));
+            if(sum>mul)
+               result+=Character.getNumericValue(S.charAt(i)); 
+            else
+               result*=Character.getNumericValue(S.charAt(i));
+        }
+        return result;
+    }
