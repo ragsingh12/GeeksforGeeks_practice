@@ -1,0 +1,15 @@
+Problem Statement:
+You are given a string S. Your task is to determine if the sum of ASCII values of all character results in a perfect square or not. 
+If it is a perfect square then the answer is 1, otherwise 0.
+
+Solution:
+static int isSquare(String S)
+    {
+        long sum=0;
+        for(int i=0;i<S.length();++i)
+            sum+=(long)S.charAt(i);
+        if( (Math.sqrt(sum) ) - ( (int)Math.sqrt(sum) ) == 0 )
+            return 1;
+        else
+            return 0;
+    }
