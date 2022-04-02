@@ -1,0 +1,22 @@
+Problem Statement:
+Given a function that takes a binary string. The task is to return the longest size of contiguous substring containing only ‘1’.
+
+Solution:
+public int count(String s)
+    {
+        int counter=0,max_Counter=0;
+        for(int i=0;i<s.length();++i)
+        {
+            if(s.charAt(i)=='1')
+                ++counter;
+            else
+            {
+                if(counter>max_Counter)
+                    max_Counter=counter;
+                counter=0;
+            }
+        }
+        if(counter>max_Counter)
+            max_Counter=counter;
+        return max_Counter;
+    }
