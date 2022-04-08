@@ -1,0 +1,16 @@
+Problem Statement:
+Given a string S, remove all consonants and print the modified string that contains vowels only.
+
+Solution:
+public String removeConsonants(String str)
+    {
+        String result = "No Vowel";
+        boolean flag = false;
+        if(str.contains("a") || str.contains("e") || str.contains("i") || str.contains("o")
+        || str.contains("u") || str.contains("A") || str.contains("E") || str.contains("I")
+        || str.contains("O") || str.contains("U"))
+        flag = true;
+        if(flag == true)
+            return str.replaceAll("[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]", "");
+        return result;
+    }
