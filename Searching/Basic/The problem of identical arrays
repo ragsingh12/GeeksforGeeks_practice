@@ -1,0 +1,17 @@
+Problem Statement:
+Two arrays of size N are called identical arrays if they contain the same elements. The order of elements in both arrays could be different; however, 
+both the arrays must contain same elements. You are given two arrays of size N.
+You need to determine if the arrays are identical or not.
+
+Solution:
+public static int check (int arr[], int[] brr, int n)
+    {
+        Arrays.sort(arr);
+        Arrays.sort(brr);
+        for(int i=0;i<n;++i)
+        {
+            if(arr[i]!=brr[i])
+                return 0;
+        }
+        return 1;
+    }
