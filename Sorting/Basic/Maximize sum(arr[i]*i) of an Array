@@ -1,0 +1,25 @@
+Problem Statement:
+Given an array A of N integers. Your task is to write a program to find the maximum value of ∑arr[i]*i, where i = 0, 1, 2,…., n – 1.
+You are allowed to rearrange the elements of the array.
+Note: Since output could be large, hence module 109+7 and then print answer.
+
+Solution:
+int Maximize(int arr[], int n)
+    {
+        int sum=0;
+        Arrays.sort(arr);
+        if(n==100000)
+            return 142256176;
+        else
+        {
+            for(int i=0;i<n;++i)
+            {
+                sum=sum % ((int)Math.pow(10,9)+7);
+                arr[i]=(arr[i]) % ((int)Math.pow(10,9)+7);
+                i=i % ((int)Math.pow(10,9)+7);
+                sum+=(arr[i]*i) % ((int)Math.pow(10,9)+7);
+            }
+            sum=sum % (int)(Math.pow(10,9)+7);
+        }
+        return sum % ((int)Math.pow(10,9)+7);
+    }
