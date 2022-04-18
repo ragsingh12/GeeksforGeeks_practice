@@ -1,0 +1,9 @@
+Problem Statement:
+Given a random set of numbers, Print them in sorted order.
+
+Solution:
+int[] sortArr(int[] arr, int n) 
+    { 
+        Arrays.sort(arr);
+        return arr;
+    }
