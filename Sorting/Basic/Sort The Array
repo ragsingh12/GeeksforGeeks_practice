@@ -1,5 +1,5 @@
 Problem Statement:
-Given a random set of numbers, Print them in sorted order.
+Given a random set of numbers, Print them in the sorted order.
 
 Solution:
 int[] sortArr(int[] arr, int n) 
