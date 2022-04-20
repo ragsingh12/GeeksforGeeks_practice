@@ -1,0 +1,15 @@
+Problem Statement:
+Given an unsorted array, find the minimum difference between any pair in given array.
+
+Solution:
+public int minimum_difference(int[] nums)
+    {
+        Arrays.sort(nums);
+        int min_Element=nums[1]-nums[0];
+        for(int i=0;i<nums.length-1;++i)
+        {
+            if((nums[i+1]-nums[i])<min_Element)
+                min_Element=nums[i+1]-nums[i];
+        }
+        return min_Element;
+    }
