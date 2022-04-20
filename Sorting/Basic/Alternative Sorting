@@ -1,0 +1,25 @@
+Problem Statement:
+Given an array arr[] of N distinct integers, output the array in such a way that the first element is first maximum and the second element is the first minimum, 
+and so on.
+
+Solution:
+ArrayList<Long> alternateSort(long arr[] ,int N)
+    {
+        ArrayList<Long> array=new ArrayList<>();
+        Arrays.sort(arr);
+        int odd_Index=0,even_Index=N-1;
+        for(int i=0;i<N;++i)
+        {
+            if( (i&1) ==0 )
+            {
+                array.add(arr[even_Index]);
+                --even_Index;
+            }
+            else
+            {
+                array.add(arr[odd_Index]);
+                ++odd_Index;
+            }
+        }
+        return array;
+    }
