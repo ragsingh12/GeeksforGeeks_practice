@@ -1,0 +1,30 @@
+Problem Statement:
+Mr. Geek is a greedy seller. He has a stock of N laptops which comprises of both useful and useless laptops. 
+Now, he wants to organize a sale to clear his stock of useless laptops. 
+The prices of N laptops are Ai each consisting of positive and negative integers (-ve denoting useless laptops). In a day, he can sell atmost M laptops. 
+Mr. Geek being a greedy seller want to earn maximum profit out of this sale. So, help him maximizing his profit by selling useless laptops.
+
+Solution:
+public static long maxProfit(int a[], int n, int m) 
+    {
+        long sum=0;
+        Arrays.sort(a);
+        if(m>n)
+        {
+           for(int i=0;i<n;++i)
+            {
+                if(a[i]<0)
+                    sum+=a[i];
+            } 
+        }
+        else
+        {
+            for(int i=0;i<m;++i)
+            {
+                if(a[i]<0)
+                    sum+=a[i];
+            }
+        }
+        sum=Math.abs(sum);
+        return sum;
+    }
