@@ -1,0 +1,33 @@
+Problem Statement:
+Given two arrays of length N and M, print the merged array in ascending order containing only unique elements.
+
+Solution:
+public static int mergeNsort(int a[], int b[], int n, int m, int answer[])
+    {
+        int max=-1,index=0;
+        for(int i=0;i<n;++i)
+        {
+            if(a[i]>max)
+                max=a[i];
+        }
+        for(int j=0;j<m;++j)
+        {
+            if(b[j]>max)
+                max=b[j];
+        }
+        int[] count=new int[max+1];
+        Arrays.fill(count,0);
+        for(int k=0;k<n;++k)
+            ++count[a[k]];
+        for(int k=0;k<m;++k)
+            ++count[b[k]];
+        for(int i=0;i<=max;++i)
+        {
+            if(count[i]>0)
+            {
+                answer[index]=i;
+                ++index;
+            }
+        }
+        return index;
+    }
