@@ -1,0 +1,9 @@
+Problem Statement:
+Given an integer array of which both first half and second half are sorted. The task is to merge two sorted halves of the array into a single sorted array.
+Note: The two halves can be of arbitrary sizes.
+
+Solution:
+public static void sortHalves (int arr[], int n)
+    {
+        Arrays.sort(arr);
+    }
