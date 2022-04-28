@@ -1,0 +1,18 @@
+Problem Statement:
+Given a string, say S, print it in reverse manner eliminating the repeated characters and spaces.
+
+Solution:
+public String reverseString(String s)
+    {
+        String sr="";
+        HashSet<Character> ch=new HashSet<>();
+        for(int i=s.length()-1;i>=0;--i)
+        {
+            if(!ch.contains(s.charAt(i)) && s.charAt(i)!=' ')
+            {
+                sr+=s.charAt(i);
+                ch.add(s.charAt(i));
+            }
+        }
+        return sr;
+    }
