@@ -1,0 +1,19 @@
+Problem Statement:
+Bheem has N friends. And he has a ladoo for each day. Given an Array A[] denoting on which day ith friend wants a ladoo.
+If Bheem is unable to give a ladoo to a friend, he loses his friendship with them. Find out the maximum number of Friends he can have at the end.
+
+Solution:
+static int divideLadoo(int N , int[] A)
+    {
+        int counter=0;
+        int[] count=new int[100001];
+        Arrays.fill(count,0);
+        for(int i=0;i<N;++i)
+            ++count[A[i]];
+        for(int i=1;i<=100000;++i)
+        {
+            if(count[i]>0)
+                ++counter;
+        }
+        return counter;
+    }
