@@ -1,0 +1,15 @@
+Problem Statement:
+Given string s, the task is to find the count of all substrings which have the same character at the beginning and end.
+
+Solution:
+int countSubstringWithEqualEnds(String s) 
+    {
+        int counter=0;
+        int[] count=new int[27];
+        Arrays.fill(count,0);
+        for(int i=0;i<s.length();++i)
+            ++count[s.charAt(i)-'a'];
+        for(int k=0;k<=26;++k)
+            counter+=( count[k]*(count[k]+1) )/2;
+        return counter;
+    }
