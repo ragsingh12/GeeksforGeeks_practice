@@ -1,0 +1,33 @@
+Problem Statement:
+Rohan is downloading the movie Tiger Zinda Hai using a torrent website, but he is new to torrent, 
+so he doesn't know the difference between a fake download button and a real download button; therefore, he keeps pressing every button in excitement.
+Now he has clicked N  buttons, and many tabs are opened, if an opened tab is clicked again then it closes it. Your task is to tell how many tabs are open at the end.
+
+Solution:
+public static int count_tabs(String[] arr,int n)
+    {
+        int counter=0;
+        HashSet<String> str=new HashSet<String>();
+        for(int i=0;i<n;++i)
+        {
+            if(arr[i].equals("END"))
+            {
+                str.clear();
+                counter=0;
+            }
+            else
+            {
+                if(!str.contains(arr[i]))
+                {
+                    str.add(arr[i]);
+                    ++counter;
+                }
+                else
+                {
+                    str.remove(arr[i]);
+                    --counter;
+                }
+            }
+        }
+        return counter;
+    }
