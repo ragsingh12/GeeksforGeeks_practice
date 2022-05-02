@@ -1,0 +1,23 @@
+Problem Statement:
+Given a string consisting of lowercase english alphabets. Find the repeated character present first in the string.
+
+Solution:
+char firstRep(String S)
+    {
+        int min_Index=100001;
+        HashSet<Character> ch=new HashSet<Character>();
+        for(int i=S.length()-1;i>=0;--i)
+        {
+            if(!ch.contains(S.charAt(i)))
+                ch.add(S.charAt(i));
+            else
+            {
+                if(i<min_Index)
+                    min_Index=i;
+            }
+        }
+        if(min_Index==100001)
+            return '#';
+        else
+            return S.charAt(min_Index);
+    }
