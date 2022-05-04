@@ -1,0 +1,22 @@
+Problem Statement:
+Given a string S. Count the characters that have ‘N’ number of occurrences. If a character appears consecutively it is counted as 1 occurrence.
+
+Solution:
+int getCount (String S, int N)
+    {
+        int counter=0,last_index=S.length()-1;
+        int[] count=new int[26];
+        Arrays.fill(count,0);
+        for(int i=0;i<S.length()-1;++i)
+        {
+            if(S.charAt(i)!=S.charAt(i+1))
+                ++count[S.charAt(i)-'a'];
+        }
+        ++count[S.charAt(last_index)-'a'];
+        for(int k=0;k<26;++k)
+        {
+            if(count[k]==N)
+                ++counter;
+        }
+        return counter;
+    }
