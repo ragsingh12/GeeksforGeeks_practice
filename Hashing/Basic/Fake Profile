@@ -1,0 +1,24 @@
+Problem Statement:
+There is a hacker named "Vijay" who has developed a method to check whether an id at some social networking site is fake or real using its username.
+His method includes: if the number of distinct characters in one's user name is odd, then the user is a male, otherwise a female.
+You are given the string that denotes the user name, please help Vijay to determine the gender of this user by his method. Ignore the vowels.
+Note: The input only contains lowercase English alphabets.
+
+Solution:
+public String solve(String a)
+    {
+        HashSet<Character> array=new HashSet<Character>();
+        for(int i=0;i<a.length();++i)
+        {
+            if(a.charAt(i)!='a' && a.charAt(i)!='e' && a.charAt(i)!='i' &&
+            a.charAt(i)!='o' && a.charAt(i)!='u')
+            {
+                if(!array.contains(a.charAt(i)))
+                    array.add(a.charAt(i));
+            }
+        }
+        if((array.size()&1)==0)
+            return "SHE!";
+        else
+            return "HE!";
+    }
