@@ -1,0 +1,13 @@
+Problem Statement:
+Given a linked list. Print all the elements of the linked list.
+
+Solution:
+void display(Node head)
+    {
+        Node temp=head;
+        while(temp!=null)
+        {
+            System.out.print(temp.data+" ");
+            temp=temp.next;
+        }
+    }
