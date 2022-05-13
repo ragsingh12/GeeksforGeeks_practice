@@ -1,0 +1,15 @@
+Problem Statement:
+Given a singly linked list with N nodes and a number X. The task is to find the node at the given index (X)(1 based index) of linked list. 
+
+Solution:
+public static int getNth(Node node, int ind)
+    {
+       Node temp=node;
+       int counter=1;
+       while(counter<ind)
+       {
+           temp=temp.next;
+           ++counter;
+       }
+       return temp.data;
+    }
