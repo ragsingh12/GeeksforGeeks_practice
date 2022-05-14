@@ -1,0 +1,24 @@
+Problem Statement:
+Given a linked list of size N and a key. The task is to insert the key in the middle of the linked list.
+
+Solution:
+public Node insertInMid(Node head, int data)
+    {
+        int counter=1,index=1;
+        Node temp=head;
+        Node n=new Node(data);
+        while(temp!=null)
+        {
+            temp=temp.next;
+            ++counter;
+        }
+        temp=head;
+        while(index<Math.ceil(counter/2))
+        {
+            temp=temp.next;
+            ++index;
+        }
+        n.next=temp.next;
+        temp.next=n;
+        return head;
+    }
