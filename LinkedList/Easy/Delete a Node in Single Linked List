@@ -1,0 +1,29 @@
+Problem Statement:
+Given a singly linked list and an integer x.Delete xth node from the singly linked list.
+
+Solution:
+Node deleteNode(Node head, int x)
+    {
+        int counter=1;
+	    Node temp=head;
+	    Node previous=null;
+	    if(x==1)
+	    {
+	        previous=head;
+	        head=head.next;
+	        previous=null;
+	    }
+	    else
+	    {
+	        while(counter<x)
+	        {
+	            previous=temp;
+	            temp=temp.next;
+	            ++counter;
+	        }
+	        previous.next=temp.next;
+	        temp=null;
+	        temp=previous.next;
+	    }
+	    return head;
+    }
