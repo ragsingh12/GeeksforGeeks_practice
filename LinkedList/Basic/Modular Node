@@ -1,0 +1,18 @@
+Problem Statement:
+You don't need to read input or print anything. Complete the function modularNode() which takes 
+the head Node and integer k as input parameters and returns the modular Node, if exists, -1 otherwise.
+
+Solution:
+public static int moduarNode(Node head, int k)
+    {
+        int count=1,result=-1;
+        Node temp=head;
+        while(temp!=null)
+        {
+            if(count%k==0)
+                result=temp.data;
+            temp=temp.next;
+            ++count;
+        }
+        return result;
+    }
