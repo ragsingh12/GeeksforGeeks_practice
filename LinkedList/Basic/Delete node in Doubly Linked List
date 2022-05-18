@@ -1,0 +1,39 @@
+Problem Statement:
+Given a doubly linked list and a position. The task is to delete a node from given position in a doubly linked list.
+
+Solution:
+Node deleteNode(Node head,int x)
+    {
+        int count=1;
+	    Node temp=head;
+	    Node chaser=null;
+	    if(count==x)
+	    {
+	        head=head.next;
+	        temp=null;
+	        head.prev=null;
+	    }
+	    else
+	    {
+	        while(temp.next!=null)
+	        {
+	            if(count==x)
+	            {
+	                chaser.next=temp.next;
+	                temp=null;
+	                temp=chaser.next;
+	                temp.prev=chaser;
+	                return head;
+	            }
+	            chaser=temp;
+	            temp=temp.next;
+	            ++count;
+	        }
+	        if(count==x)
+	        {
+	            chaser.next=temp.next;
+	            temp=null;
+	        }
+	    }
+	    return head;
+    }
