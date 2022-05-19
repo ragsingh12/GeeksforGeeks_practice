@@ -1,0 +1,27 @@
+Problem Statement:
+Given a linked list consisting of L nodes and given a number N. The task is to find the Nth node from the end of the linked list.
+
+Solution:
+int getNthFromLast(Node head, int n)
+    {
+    	int count=1,index=1;
+    	Node temp=head;
+    	while(temp.next!=null)
+    	{
+    	    temp=temp.next;
+    	    ++count;
+    	}
+    	if(n>count)
+    	    return -1;
+    	temp=head;
+    	while(temp!=null)
+    	{
+    	    if(index==(count-n)+1)
+    	    {
+    	        return temp.data;
+    	    }
+    	    ++index;
+    	    temp=temp.next;
+    	}
+    	return -1;
+    }
