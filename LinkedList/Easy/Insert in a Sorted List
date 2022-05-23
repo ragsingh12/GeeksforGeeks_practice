@@ -1,0 +1,32 @@
+Problem Statement:
+Given a linked list sorted in ascending order and an integer called data, insert data in the linked list such that the list remains sorted.
+
+Solution:
+Node sortedInsert(Node head1, int key)
+    {
+        Node n=new Node(key);
+        Node temp=head1;
+        Node prev=null;
+        if(head1.data>key)
+        {
+            n.next=head1;
+            head1=n;
+        }
+        else
+        {
+            while(temp.next!=null)
+            {
+                prev=temp;
+                temp=temp.next;
+                if(temp.data>key)
+                {
+                    n.next=prev.next;
+                    prev.next=n;
+                    return head1;
+                }
+            }
+            n.next=null;
+            temp.next=n;
+        }
+        return head1;
+    }
