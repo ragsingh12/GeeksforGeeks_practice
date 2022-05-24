@@ -1,0 +1,34 @@
+Problem Statement:
+Given a sorted circular linked list, the task is to insert a new node in this circular list so that it remains a sorted circular linked list.
+
+Solution:
+public static Node sortedInsert(Node head,int data)
+    {
+        Node n=new Node(data);
+        Node last=head;
+        while(last.next!=head)
+            last=last.next;
+        Node temp=last.next;
+        Node prev=last;
+        if(head.data>data)
+        {
+            n.next=head;
+            prev.next=n;
+            return last.next;
+        }
+        while(temp.next!=head)
+        {
+            prev=temp;
+            temp=temp.next;
+            if(temp.data>data)
+            {
+                n.next=temp;
+                prev.next=n;
+                return last.next;
+            }
+        }
+        n.next=temp.next;
+        temp.next=n;
+        last=n;
+        return last.next;
+    }
