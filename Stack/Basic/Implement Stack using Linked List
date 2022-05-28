@@ -1,0 +1,51 @@
+Problem Statement:
+Let's give it a try! You have a linked list and you have to implement the functionalities push and pop of stack using this given linked list.
+Your task is to use the class as shown in the comments in the code editor and complete the functions push() and pop() to implement a stack. 
+
+Solution:
+int top=0;
+    StackNode head=null;
+    
+    void push(int a) 
+    {
+        StackNode n=new StackNode(a);
+        if(head==null)
+        {
+            head=n;
+            ++top;
+        }
+        else
+        {
+            StackNode temp=head;
+            while(temp.next!=null)
+                temp=temp.next;
+            temp.next=n;
+            ++top;
+        }
+    }
+    
+    int pop() 
+    {
+        int result=-1;
+        if(head==null)
+            return result;
+        if(top==1)
+        {
+            result=head.data;
+            head=null;
+            --top;
+            return result;
+        }
+        StackNode temp=head;
+        StackNode prev=null;
+        while(temp.next!=null)
+        {
+            prev=temp;
+            temp=temp.next;
+        }
+        prev.next=null;
+        result=temp.data;
+        temp=null;
+        --top;
+        return result;
+    }
