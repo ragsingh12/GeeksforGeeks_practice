@@ -1,0 +1,30 @@
+Problem Statement:
+Given a sorted array arr[] of distinct integers. Sort the array into a wave-like array and return it
+In other words, arrange the elements into a sequence such that arr[1] >= arr[2] <= arr[3] >= arr[4] <= arr[5].....
+If there are multiple solutions, find the lexicographically smallest one.
+
+Solution:
+public static void convertToWave(int n, int[] a)
+    {
+        int k=1,m=0,temp=0;
+        int[] ar=new int[n];
+        if((n&1)!=0)
+            temp=a[n-1];
+        for(int i=0;i<n;++i)
+        {
+            if((i&1)==0 && k<n)
+            {
+                ar[k]=a[i];
+                k+=2;
+            }
+            else if((i&1)!=0 && m<n)
+            {
+                ar[m]=a[i];
+                m+=2;
+            }
+        }
+        for(int j=0;j<n;++j)
+            a[j]=ar[j];
+        if((n&1)!=0)
+            a[n-1]=temp;
+    }
