@@ -1,0 +1,20 @@
+Problem Statement:
+Given an array A[] of N positive integers which can contain integers from 1 to P where elements can be repeated or can be absent from the array.
+Your task is to count the frequency of all elements from 1 to N.
+Note: The elements greater than N in the array can be ignored for counting and please read your task section of the problem carefully to understand how to output the array.
+
+Solution:
+public static void frequencyCount(int arr[], int N, int P)
+    {
+        int length=0;
+        if(P>N)
+            length=P;
+        else
+            length=N;
+        int[] count=new int[length+1];
+        Arrays.fill(count,0);
+        for(int i=0;i<N;++i)
+            ++count[arr[i]];
+        for(int j=1;j<=N;++j)
+            arr[j-1]=count[j];
+    }
