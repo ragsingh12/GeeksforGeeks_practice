@@ -1,0 +1,14 @@
+Problem Statement:
+For an integer N find the number of trailing zeroes in N!.
+
+Solution:
+static int trailingZeroes(int N)
+    {
+        int i=5,result=0;
+        while(i<=N)
+        {
+            result+=N/i;
+            i*=5;
+        }
+        return result;
+    }
