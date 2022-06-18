@@ -1,0 +1,21 @@
+Problem Statement:
+Given a positive integer N. The task is to check whether a number has exactly three distinct factors or not.
+
+Solution:
+static int hasThreePrimeFac(Long N)
+    {
+        int count=2;
+        for(int i=2;i<=(long)Math.sqrt(N);++i)
+        {
+            if(N%i==0 && i!=(N/i))
+                count+=2;
+            else if(N%i==0 && i==(N/i))
+                ++count;
+            if(count>3)
+                break;
+        }
+        if(count==3)
+            return 1;
+        else
+            return 0;
+    }
