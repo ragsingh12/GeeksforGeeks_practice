@@ -1,0 +1,16 @@
+Problem Statement:
+Given an array A of size N of integers. Your task is to find the sum of minimum and maximum elements in the array.
+
+Solution:
+public static int findSum(int A[],int N) 
+    {
+        int min=A[0],max=A[0];
+        for(int i=0;i<N;++i)
+        {
+            if(A[i]<min)
+                min=A[i];
+            if(A[i]>max)
+                max=A[i];
+        }
+        return max+min;
+    }
