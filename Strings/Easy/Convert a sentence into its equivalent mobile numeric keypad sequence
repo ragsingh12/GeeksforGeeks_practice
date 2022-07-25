@@ -1,0 +1,90 @@
+Problem Statement:
+Given a sentence in the form of a string in uppercase, convert it into its equivalent mobile numeric keypad sequence.
+
+Solution:
+String printSequence(String S) 
+    {
+        StringBuffer str=new StringBuffer();
+        for(int i=0;i<S.length();++i)
+        {
+            if(S.charAt(i)=='A' || S.charAt(i)=='B' || S.charAt(i)=='C')
+            {
+                if(S.charAt(i)=='A')
+                    str.append("2");
+                else if(S.charAt(i)=='B')
+                    str.append("22");
+                else
+                    str.append("222");
+            }
+            else if(S.charAt(i)=='D' || S.charAt(i)=='E' || S.charAt(i)=='F')
+            {
+                if(S.charAt(i)=='D')
+                    str.append("3");
+                else if(S.charAt(i)=='E')
+                    str.append("33");
+                else
+                    str.append("333");
+            }
+            else if(S.charAt(i)=='G' || S.charAt(i)=='H' || S.charAt(i)=='I')
+            {
+                if(S.charAt(i)=='G')
+                    str.append("4");
+                else if(S.charAt(i)=='H')
+                    str.append("44");
+                else
+                    str.append("444");
+            }
+            else if(S.charAt(i)=='J' || S.charAt(i)=='K' || S.charAt(i)=='L')
+            {
+                if(S.charAt(i)=='J')
+                    str.append("5");
+                else if(S.charAt(i)=='K')
+                    str.append("55");
+                else
+                    str.append("555");
+            }
+            else if(S.charAt(i)=='M' || S.charAt(i)=='N' || S.charAt(i)=='O')
+            {
+                if(S.charAt(i)=='M')
+                    str.append("6");
+                else if(S.charAt(i)=='N')
+                    str.append("66");
+                else
+                    str.append("666");
+            }
+            else if(S.charAt(i)=='P' || S.charAt(i)=='Q' || S.charAt(i)=='R' || S.charAt(i)=='S')
+            {
+                if(S.charAt(i)=='P')
+                    str.append("7");
+                else if(S.charAt(i)=='Q')
+                    str.append("77");
+                else if(S.charAt(i)=='R')
+                    str.append("777");
+                else
+                    str.append("7777");
+            }
+            else if(S.charAt(i)=='T' || S.charAt(i)=='U' || S.charAt(i)=='V')
+            {
+                if(S.charAt(i)=='T')
+                    str.append("8");
+                else if(S.charAt(i)=='U')
+                    str.append("88");
+                else
+                    str.append("888");
+            }
+            else if(S.charAt(i)=='W' || S.charAt(i)=='X' || S.charAt(i)=='Y' || S.charAt(i)=='Z')
+            {
+                if(S.charAt(i)=='W')
+                    str.append("9");
+                else if(S.charAt(i)=='X')
+                    str.append("99");
+                else if(S.charAt(i)=='Y')
+                    str.append("999");
+                else
+                    str.append("9999");
+            }
+            else
+                str.append("0");
+        }
+        return str.toString();
+    }
