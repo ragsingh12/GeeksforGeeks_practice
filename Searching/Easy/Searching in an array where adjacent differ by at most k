@@ -1,0 +1,24 @@
+Problem Statement:
+A step array is an array of integer where each element has a difference of at most k with its neighbor. 
+Given a key x, we need to find the index value of x if multiple elements exist, return the first occurrence of the key.
+
+Solution:
+public static int search (int arr[], int n, int x, int k)
+    {
+        if(n==1)
+        {
+            if(arr[0]==x)
+                return 0;
+        }
+        else
+        {
+            for(int i=1;i<n;++i)
+            {
+                if(arr[i]==x && Math.abs(arr[i]-arr[i-1])<=k)
+                    return i;
+            }
+            if(arr[0]==x && Math.abs(arr[0]-arr[1])<=k)
+                return 0;
+        }
+        return -1;
+    }
